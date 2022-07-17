@@ -1,5 +1,4 @@
 import React from 'react';
-import ripple from 'ripple-effects';
 
 const Index = () => {
   const rippleSettings = {
@@ -53,7 +52,11 @@ const Index = () => {
     }
   }
 
+  
+
   React.useEffect(() => {
+    const ripple = require('ripple-effects');
+
     ripple(".game-area", rippleSettings.found.a);
     ripple(".game-area", rippleSettings.found.b);
 
@@ -69,13 +72,13 @@ const Index = () => {
         <span className={`toFind toFind-3`} data-find="c">3</span>
         <span className={`toFind toFind-4`} data-find="d">4</span>
       </div>
-      <div className="game-area" onClick={(e) => areaClick(e)}>
-        <div className="ghost-game-area"></div>
-        <span className={`pill pill-1 pill-not-found`} data-index='a' data-found-text={foundText}></span>
-        <span className={`pill pill-2 pill-not-found`} data-index='b' data-found-text={foundText}></span>
-        <span className={`pill pill-3 pill-not-found`} data-index='c' data-found-text={foundText}></span>
-        <span className={`pill pill-4 pill-not-found`} data-index='d' data-found-text={foundText}></span>
-      </div>
+        <div className="game-area" onClick={(e) => areaClick(e)}>
+          <div className="ghost-game-area"></div>
+          <span className={`pill pill-1 pill-not-found`} data-index='a' data-found-text={foundText}></span>
+          <span className={`pill pill-2 pill-not-found`} data-index='b' data-found-text={foundText}></span>
+          <span className={`pill pill-3 pill-not-found`} data-index='c' data-found-text={foundText}></span>
+          <span className={`pill pill-4 pill-not-found`} data-index='d' data-found-text={foundText}></span>
+        </div>
     </div>
   );
 };
